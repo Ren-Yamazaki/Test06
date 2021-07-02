@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mysite</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css')}}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">自己管理アプリ</a>
+</nav>
+
+
+{% with messages=get_flashed_messages() %}
+    {% if messages %}
+        <div>
+            {{ messages[0] }}
+        </div>
+    {% endif %}
+{% endwith %}
+
+<div class="container mt-4">
+{% block content %}
+{% endblock %}
+</div>
+
+
+<div class="col text-center">
+    {% if current_user.is_authenticated %}
+    <a href="{{ url_for('index') }}" class="btn btn-primary">トップページ</a></li>
+    <a href="{{ url_for('auth.logout') }}" class="btn btn-primary">ログアウト</a></li>
+    <a href="{{ url_for('create') }}" class="btn btn-primary">習慣登録</a></li>
+    {% endif %}
+    {% if not current_user.is_authenticated %}
+    <a href="{{ url_for('auth.signup') }}" class="btn btn-primary">新規登録</a></li>
+    <a href="{{ url_for('auth.login') }}" class="btn btn-primary">ログイン</a></li>
+    {% endif %}
+</div>
+
+
+
+
+</body>
+</html>

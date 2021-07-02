@@ -1,0 +1,15 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+<form action="/update/{{ post.id }}" method="POST">
+    <label for="title">Title</label>
+    <input type="text" name="title" value="{{ post.title }}">
+    <label for="detail">Detail</label>
+    <input type="text" name="detail" value="{{ post.detail}} ">
+    <label for="due">Due</label>
+    <input type="date" name="due" value="{{ post.due.date() }}" required>
+    <label for="name">Name</label>
+    <input type="text" name="name" value="{{ post.name }}" readonly>
+    <input type="submit" value="Change">
+</form>
+{% endblock %}

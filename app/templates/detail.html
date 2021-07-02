@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ post.title }}</h2>
+<p>{{ post.detail }}</p>
+<p>{{ post.due.date() }}</p>
+<a href="/report/{{ post.id }}" role="button" class="btn btn-info">報告</a>
+<a href="/reportcheck/{{ post.id }}" role="button" class="btn btn-info">進捗確認</a>
+<a href="/reportgraph/{{ post.id }}" role="button" class="btn btn-info">グラフ</a>
+{% endblock %}
