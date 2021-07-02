@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>DB　登録（テスト・確認用）</h1>
+<div class="form">
+    <form action="/db_all" method="POST">
+
+        <label for="name">name</label>
+        <input type="text" name="name">
+        <!--
+        <label for="level">level</label>
+        <input type="text" name="level">
+        -->
+        <label for="Num_Of_Registration">Num_Of_Registration</label>
+        <input type="text" name="Num_Of_Registration">
+        <!--
+        <label for="item_use_id">item_use_id</label>
+        <input type="text" name="item_use_id">
+        
+        <label for="item_use_id">item_use_id</label>
+        <input type="text" name="item_use_id">
+
+        <label for="amount_needed">amount_needed</label>
+        <input type="text" name="amount_needed">
+
+        <label for="amount_useable">amount_useable</label>
+        <input type="text" name="amount_useable">
+        -->
+        <input type="submit" value="REGIST">
+    </form>
+</div>
+{% endblock %}
