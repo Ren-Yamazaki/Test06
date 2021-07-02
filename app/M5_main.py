@@ -34,11 +34,7 @@ level(Integer)→使用可能アイテム数  ※Num_Of_Registrationに応じて
 class status(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(1000))
-    #item_use_id = db.Column(db.String(20), nullable=True)
-    #level = db.Column(db.Integer, nullable=True)
     Num_Of_Registration = db.Column(db.Integer,nullable=False)
-    #change_item_id = db.Column(db.String(20), nullable=True)
-    #id = db.Column(db.Integer)
 
 ItemALL = ['レベルを上げて称号をゲットしよう!','初めての称号！！','2個目の称号！！','3個目の称号！！','4個目の称号！！','5個目の称号！！']
 #ここでアイテムの名前と順番を設定
