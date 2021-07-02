@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <meta charset="utf-8">
+    <title>進捗記録</title>
+
+</head>
+<body>
+    <div>
+        <div class="backbround color blue lighten-2">
+                <h1><p class="white-text">　進捗記録</p></h1>
+        </div>
+    </div>
+
+<br>
+<br>
+
+<form action="/" method="POST">
+  <div class="row">
+    <div class="col s2">
+      <button class="btn waves-effect waves-light blue lighten-2" onclick="location.href='/record'">日付</button>
+    </div>
+    <div class="col s9">
+      <input type="date" name="date" required>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col s2">
+      <button class="btn waves-effect waves-light blue lighten-2" onclick="location.href='/record'">コメント</button>
+    </div>
+    <div class="col s9">  
+      <input type="text" name="comment">
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col s2">
+      <button class="btn waves-effect waves-light blue lighten-2" onclick="location.href='/record'">時間</button>
+    </div>
+    <div class="col s9">
+      <input type="number" name="time" required>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div>
+    <p class="center-align">
+      <button class="btn waves-effect waves-light blue lighten-2" type="submit">進捗記録を完了</button>
+    </p>
+  </div>
+
+</form>
+
+
+</body>
+</html>
