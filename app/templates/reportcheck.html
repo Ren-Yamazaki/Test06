@@ -1,0 +1,17 @@
+<!--
+*File Name :reportcheck.py
+*Version   :V1.0
+*Designer  :山﨑　蓮
+*Date      :2021.6.21
+*Purpose   :登録された記録情報を画面上に表示する
+-->
+{%  extends "layout.html" %}
+
+{% block content %}
+    <!--日付，コメント，進歩をすべての記録情報について表示する-->
+    {%  for report in reports %}
+        {% if post.id ==report.pid %}
+        <p>日付:{{ report.date.date() }} コメント:{{ report.comment }} 進捗:{{ report.time }} </p>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

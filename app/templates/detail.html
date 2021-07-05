@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <p>名前：{{post.student_id}}</p>
+    <p>内容：{{post.contents}}</p>
+    <p>頻度：{{post.frequency}}</p>
+    <p>期間：{{post.period_s.date()}}~{{post.period_e.date()}}</p>
+    <p>最終目標：{{post.distination}}</p>
+    <p>難易度：{{post.difficulty}}</p>
+    <p>分野：{{post.field}}</p>
+<a href="/record/{{ post.id }}" role="button" class="btn btn-info">進捗記録</a>
+<a href="/reportcheck/{{ post.id }}" role="button" class="btn btn-info">進捗確認</a>
+<a href="/reportgraph/{{ post.id }}" role="button" class="btn btn-info">グラフ</a>
+{% endblock %}

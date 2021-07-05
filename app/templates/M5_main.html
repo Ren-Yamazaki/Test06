@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>ステータス一覧</h1>
+
+    <p> 
+        <font size="5">
+        ID : {{posts.name }}  さん<br></br>
+        登録習慣化総数：{{posts.Num_Of_Registration}}<br></br>
+        level: {{ posts.level }}<br></br>
+        <!--
+        獲得称号総数：{{posts.amount_useable}}
+        <br></br>
+        -->
+        </font>
+        <br></br>     
+
+            <div class="card-header">
+            称号一覧  
+            </div>        
+        {% for show_item_name in show_item_names %}
+        <div class="card" style="width: 18rem;">
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{show_item_name}}</li>
+            </ul>
+          </div>
+        {% endfor %}    
+{% endblock %}
