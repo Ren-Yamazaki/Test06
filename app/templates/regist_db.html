@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>DB　登録（テスト・確認用）</h1>
+<div class="form">
+    <form action="/db_all" method="POST">
+
+        <label for="name">name</label>
+        <input type="text" name="name">
+
+        <label for="Num_Of_Registration">Num_Of_Registration</label>
+        <input type="text" name="Num_Of_Registration">
+
+        <input type="submit" value="REGIST">
+    </form>
+</div>
+{% endblock %}

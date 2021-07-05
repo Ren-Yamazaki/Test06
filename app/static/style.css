@@ -1,0 +1,13 @@
+h1 {
+    margin: 1em 1em;
+    padding: 0.5em;
+    width: 90%;
+    color: rgb(102, 102, 102); /* 文字色 */
+    background: linear-gradient(to bottom right,rgb(135, 174, 247),rgb(252, 252, 252)); /* 背景色 */
+    border: 1px solid #ccc; /* 枠線 */
+   }
+
+#sinki{
+    width: 530px;
+    text-align: center;
+}
