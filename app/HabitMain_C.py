@@ -21,9 +21,7 @@ def create():
 @hmain.route('/delete/<int:id>')
 def delete(id):
     post = Post.query.get(id)
-    records=Record.query.get(id)
-
-    db.session.delete(records)
+    
     db.session.delete(post)
     db.session.commit()
     return redirect('/')

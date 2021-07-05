@@ -7,7 +7,7 @@
         <font size="5">
         ID : {{posts.name }}  さん<br></br>
         登録習慣化総数：{{posts.Num_Of_Registration}}<br></br>
-        level: {{posts.level}}<br></br>
+        level: {{ posts.level }}<br></br>
         <!--
         獲得称号総数：{{posts.amount_useable}}
         <br></br>
@@ -25,10 +25,5 @@
               <li class="list-group-item">{{show_item_name}}</li>
             </ul>
           </div>
-        {% endfor %}
-        <br></br>
-<p2>
-    [DB登録内容一覧(テスト・確認用)
-    <a href="/regist_db" role="button">DB登録（テスト・確認用）regist_dbへ]</a>
-</p2>        
+        {% endfor %}    
 {% endblock %}

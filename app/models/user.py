@@ -8,6 +8,7 @@ class User(UserMixin,db.Model):
     email=db.Column(db.String(100),unique=True)
     name=db.Column(db.String(1000))
     password=db.Column(db.String(100))
+    Num_Of_Registration = db.Column(db.Integer , default=0 )
 
     @classmethod
     def from_args(cls,name:str,email:str,password:str):

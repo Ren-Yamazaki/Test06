@@ -34,12 +34,12 @@ level(Integer)→使用可能アイテム数  ※Num_Of_Registrationに応じて
 ItemALL = ['レベルを上げて称号をゲットしよう!','初めての称号！！','2個目の称号！！','3個目の称号！！','4個目の称号！！','5個目の称号！！']
 #ここでアイテムの名前と順番を設定
 
-
+from app.models.user import User
 @cmain.route('/status/<int:id>',methods=['GET','POST'])
 def M5_main(id):
-    post=status.query.get(id) # .all()は必要ないかも？
-    new_level=int(post.Num_Of_Registration/4)
-    post.level=new_level
+    user=User.query.get(id) # .all()は必要ないかも？
+    new_level=int(user.Num_Of_Registration/4)
+    user.level=new_level
     #db.session.commit()  #levelはその都度計算するからDBにおいておく必要ないかも
 
     if new_level == 0:
@@ -47,7 +47,7 @@ def M5_main(id):
     else:
         show_item_names=ItemALL[1:new_level+1] #ItemALLのリストからnew_levelの数だけ1番目から取り出す
     #status画面に表示する基礎情報とアイテム名を渡す
-    return render_template('M5_main.html',posts=post,show_item_names=show_item_names)
+    return render_template('M5_main.html',posts=user,show_item_names=show_item_names)
 
 @cmain.route('/regist_db')    #dbに登録(テスト・確認用)
 def touroku():

@@ -57,6 +57,11 @@ def index():
         period_e = datetime.strptime(period_e,'%Y-%m-%d')
         new_post = Post(contents=contents,student_id=student_id,frequency=frequency,period_s=period_s,period_e=period_e,distination=distination,difficulty=difficulty,field=field)
 
+        users=User.query.all()
+        for user in users:
+            if user.name == student_id:
+                user.Num_Of_Registration=user.Num_Of_Registration+1
+
         db.session.add(new_post)
         db.session.commit()
         return redirect('/')
