@@ -37,7 +37,6 @@ def reportgraph(id):
     ax=fig.add_subplot(111)
     plt.cla()
     ttl=post.contents
-    plt.title(ttl,fontname="MS Gothic")
     plt.grid(which='both')
     plt.legend()
     plt.plot(x,y)
