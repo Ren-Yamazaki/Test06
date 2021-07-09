@@ -1,8 +1,8 @@
 '''
-*File Name :reportcheck.py
-*Version   :V1.0
+*File Name :reportgraph.py
+*Version   :V1.1
 *Designer  :山﨑　蓮
-*Date      :2021.6.21
+*Date      :2021.7.6
 *Purpose   :登録された記録情報についてのグラフを作成し，表示する
 '''
 from flask import Blueprint,make_response

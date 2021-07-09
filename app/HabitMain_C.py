@@ -5,7 +5,7 @@
 *  Date			: 2021.06.02
 *  Purpose       	: 新規登録画面から読み取ったデータをサーバへ出す。
 '''
-from flask import Flask, render_template, request,  redirect ,url_for,Blueprint
+from flask import Flask, render_template, request,  redirect ,url_for,Blueprint,flash
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from app.models.post import Post
@@ -21,7 +21,6 @@ def create():
 @hmain.route('/delete/<int:id>')
 def delete(id):
     post = Post.query.get(id)
-    
     db.session.delete(post)
     db.session.commit()
     return redirect('/')
