@@ -47,7 +47,7 @@ app.register_blueprint(record)
 
 '''
 関数名 :index
-作成者 :
+作成者 :榎並　龍大
 日付   :2021.6.20
 機能要約 :ホームページの設定をする。GETの場合はindex.htmlに飛ばし，POSTの場合は登録した情報をデータベースに追加する。
 '''
