@@ -2,7 +2,7 @@
 *  File Name		: M5_main.py 
 *  Version		: V1.1
 *  Designer		: 落合 祐介 
-*  Date			: 2021.07.02 
+*  Date			: 2021.07.12 
 *  Purpose       	: ステータス一覧画面を表示する 
 ''' 
 
@@ -34,6 +34,7 @@ from app.models.user import User
 @cmain.route('/status/<int:id>',methods=['GET','POST'])
 def M5_main(id):
     user=User.query.get(id)
+    
     #From. Added 落合祐介 2021.07.12
     new_level=int(user.Num_Of_Registration/4)
     user.level=new_level
@@ -44,5 +45,6 @@ def M5_main(id):
         #表示する称号のリストを作成
         show_item_names=ItemALL[1:new_level+1] 
     #To. Added 落合祐介　2021.07.12
+
     #ステータス一覧画面に表示するステータス情報と称号リストを渡す
     return render_template('M5_main.html',posts=user,show_item_names=show_item_names)
