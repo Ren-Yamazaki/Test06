@@ -28,5 +28,13 @@
     <label for="field"><input type="radio" name="field" value="美容" required>美容</label>
     <p></p>
     <input type="submit" value="登録">
+    <script type="text/javascript">
+      $(function(){
+        $('[type="submit"]').click(function(){
+          $(this).prop('disabled',true);
+          $(this).closest('form').submit();
+        });
+      });
+    </script>
 </form>
 {% endblock %}
