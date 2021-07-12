@@ -16,7 +16,12 @@ from app import db
 
 record=Blueprint("records",__name__)
 
-#データベースに記録する
+'''
+*module name :M17  DB記録処理
+*Designer    :根岸　純平
+*Date        :2021.6.28
+*Purpose     :日付、コメント、時間をDBに記録する
+'''
 @record.route('/record/<int:id>', methods=['GET', 'POST'])
 def newrecord(id):
     post=Post.query.get(id)
