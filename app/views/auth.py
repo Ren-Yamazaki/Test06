@@ -71,13 +71,6 @@ def login():
         email=request.form.get('email') #メールアドレス
         password=request.form.get('password') #パスワード
 
-        #From.Changed 山﨑　蓮　2021.7.6
-        if request.form.get('remember'): 
-            remember=True #次回サイトにアクセスした際にログイン状態を保持するかを決めるもの
-        else:
-            remember=False
-        #To.Changed 山﨑　蓮　2021.7.6
-
         user=User.query.filter_by(email=email).first()
 
         #From.Changed 山﨑　蓮　2021.7.6
@@ -87,7 +80,7 @@ def login():
             return render_template('auth/login.html')
         #To.Changed 山﨑　蓮　2021.7.6
 
-        login_user(user,remember=remember)
+        login_user(user,remember=False)
         flash('ログインしました。')
         return redirect(url_for('index'))
 
