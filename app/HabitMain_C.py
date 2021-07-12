@@ -14,10 +14,12 @@ from app import db
 
 hmain=Blueprint('habitmain',__name__)
 
+#習慣登録
 @hmain.route('/create')
 def create():
     return render_template('create_h.html')
 
+#データ削除
 @hmain.route('/delete/<int:id>')
 def delete(id):
     post = Post.query.get(id)
