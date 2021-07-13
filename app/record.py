@@ -17,7 +17,7 @@ from app import db
 record=Blueprint("records",__name__)
 
 '''
-*module name :M17  DB記録処理
+*module name :M9  記録リスト受け渡し処理
 *Designer    :根岸　純平
 *Date        :2021.6.28
 *Purpose     :日付、コメント、時間をDBに記録する
